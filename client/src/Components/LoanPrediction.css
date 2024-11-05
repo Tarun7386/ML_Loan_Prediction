@@ -1,0 +1,61 @@
+.speedometer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .speedometer {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+    background-color: #e0e0e0;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  
+  .needle {
+    position: absolute;
+    width: 5px; /* Width of the main part */
+    height: 80px; /* Length of the main part */
+    background-color: red; /* Color of the main part */
+    left: 50%; /* Centered horizontally */
+    bottom: 0; /* Positioned at the bottom */
+    transform-origin: bottom center; /* Rotate from the bottom center */
+    transform: rotate(0deg); /* Initially at 12 o'clock */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Arrowhead */
+  .needle::before {
+    content: '';
+    position: absolute;
+    width: 0; /* No width */
+    height: 0; /* No height */
+    border-left: 10px solid transparent; /* Left side of the arrowhead */
+    border-right: 10px solid transparent; /* Right side of the arrowhead */
+    border-bottom: 10px solid red; /* Bottom triangle pointing upwards */
+    left: -6.5px; /* Adjust to center the arrowhead */
+    bottom: 80px; /* Position above the main part */
+  }
+  
+  
+  
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .labels span {
+    font-size: 16px;
+  }
+  
+  .prediction-message {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
