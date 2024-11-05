@@ -1,61 +1,110 @@
+
+
+
+
 .speedometer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-left: 500px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
+  width: 500px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
   
-  .speedometer {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    border-radius: 100px 100px 0 0;
-    background-color: #e0e0e0;
-    margin-top: 20px;
-    overflow: hidden;
-  }
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #260d6b;
+  color: rgb(221, 233, 226);
+  border: 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn{
+  background-color: rgb(21, 196, 21);
   
-  .needle {
-    position: absolute;
-    width: 5px; /* Width of the main part */
-    height: 80px; /* Length of the main part */
-    background-color: red; /* Color of the main part */
-    left: 50%; /* Centered horizontally */
-    bottom: 0; /* Positioned at the bottom */
-    transform-origin: bottom center; /* Rotate from the bottom center */
-    transform: rotate(0deg); /* Initially at 12 o'clock */
-    transition: transform 0.5s ease-in-out; /* Smooth transition */
-  }
-  
-  /* Arrowhead */
-  .needle::before {
-    content: '';
-    position: absolute;
-    width: 0; /* No width */
-    height: 0; /* No height */
-    border-left: 10px solid transparent; /* Left side of the arrowhead */
-    border-right: 10px solid transparent; /* Right side of the arrowhead */
-    border-bottom: 10px solid red; /* Bottom triangle pointing upwards */
-    left: -6.5px; /* Adjust to center the arrowhead */
-    bottom: 80px; /* Position above the main part */
-  }
-  
-  
-  
-  .labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    width: 100%;
-  }
-  
-  .labels span {
-    font-size: 16px;
-  }
-  
-  .prediction-message {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #333;
-  }
-  
+}
+
+
+
+/* Styling for the speedometer */
+.speedometer {
+  position: relative;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  border-radius: 100px 100px 0 0;
+  background-color: #cccccc;
+  border: 5px solid #333;
+}
+
+.needle {
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background-color: red;
+  left: 50%;
+  bottom: 0;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease-out;
+}
+
+.labels {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.labels span {
+  font-weight: bold;
+}
+
+.prediction-message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}
+
+/* Additional styles for better user experience */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.error-message {
+  color: red;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
